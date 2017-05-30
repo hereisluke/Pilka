@@ -2,8 +2,18 @@
 
 {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-{% for Event in Event.objects.all() %}
-    {{ Event.name }} -- {{ Event.date }}
-{% endfor %}
+<ul>
+    <b>Wydarzenie:</b> &emsp;{{ event.name }} <br>
+    <b>Wynik:</b>&emsp; {{ event.home_team_goals }} - {{ event.away_team_goals }} <br>
+    <b>Miejsce:</b> &emsp; {{ event.place }}<br>
+    <b>Data:</b>&emsp; {{ event.date}}, {{ event.starts }} - {{ event.ends }}<br>
+    <b>Ceny biletow:</b>&emsp; {{ event.price }}<br>
+    <b>Rodzaj spotkania:</b> &emsp;{{ event.category }} <br>
+
+
+
+
+
+</ul>
 
 

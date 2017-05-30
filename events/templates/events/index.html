@@ -1,9 +1,11 @@
-{% if latest_events_list %}
+{% if all_events %}
+    <h3> Spis wszystkich wydarzen: </h3>
     <ul>
-    {% for question in latest_events_list %}
-<li><a href="{% url 'events:detail' event.id %}"> {{ Event.name }}</a></li>
-    {% endfor %}
+        {% for event in all_events %}
+           <li><a href=" {% url 'events:detail' event.id %}" >  {{ event.name }}  --  {{ event.date }} </a> </li>
+        {% endfor %}
     </ul>
 {% else %}
-    <p>No polls are available.</p>
+    <h3> Nie ma wydarzen </h3>
 {% endif %}
+

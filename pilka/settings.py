@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'polls',
     'events',
     'playerStats',
+    'django_tables2',
 ]
 
 MIDDLEWARE = [

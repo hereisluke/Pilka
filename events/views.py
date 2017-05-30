@@ -19,6 +19,11 @@ class IndexView(generic.ListView):
             created__lte=timezone.now()
         ).order_by('-created')[:5]
 
+def index(request):
+    all_events = Event.objects.all()
+    return render(request, 'events/index.html', {'all_events': all_events})
+
+
 class DetailView(generic.DetailView):
     model = Event
     template_name = 'events/detail.html'
